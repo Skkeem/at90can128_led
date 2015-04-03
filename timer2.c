@@ -36,6 +36,7 @@ ISR (TIMER2_COMP_vect)
 	tick++;
 	if (tick >= interval) {
 		putChar('1');
+		PINE |= 1 << PE3; // or PORTE ^= 1 << PE3;
 		tick = 0;
 	}
 }

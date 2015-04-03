@@ -1,5 +1,6 @@
 #include "serial.h"
 #include "timer2.h"
+#include "gpio.h"
 #include <avr/interrupt.h>
 
 #define BAUD 9600
@@ -9,6 +10,7 @@
 
 int main(void)
 {
+	initGpio();
     initUart(UBRR_VAL);
 	initTimer2(INTERVAL_MSEC);
 	sei();
