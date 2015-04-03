@@ -1,4 +1,5 @@
 #include "serial.h"
+#include <avr/io.h>
 
 void initUart (unsigned int baud)
 {
@@ -27,7 +28,7 @@ void putChar (char data)
 char getChar (void)
 {
     /* Wait until the data is received */
-    while (!(UCSR0A & (1 << RXC0)))
+    while  (!(UCSR0A & (1 << RXC0)))
     	;
 
     return UDR0;

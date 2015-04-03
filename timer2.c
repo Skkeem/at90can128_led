@@ -1,5 +1,7 @@
 #include "timer2.h"
 #include "serial.h"
+#include <avr/io.h>
+#include <avr/interrupt.h>
 
 static int interval;
 static volatile int tick;
